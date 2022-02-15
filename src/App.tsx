@@ -2,11 +2,13 @@ import {
   InformationCircleIcon,
   ChartBarIcon,
   CogIcon,
+  HeartIcon,
 } from '@heroicons/react/outline'
 import { useState, useEffect } from 'react'
 import { Alert } from './components/alerts/Alert'
 import { Grid } from './components/grid/Grid'
 import { Keyboard } from './components/keyboard/Keyboard'
+import { AndrewModal } from './components/modals/AndrewModal'
 import { InfoModal } from './components/modals/InfoModal'
 import { StatsModal } from './components/modals/StatsModal'
 import { SettingsModal } from './components/modals/SettingsModal'
@@ -49,6 +51,7 @@ function App() {
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
+  const [isAndrewModalOpen, setIsAndrewModalOpen] = useState(false)
   const [isNotEnoughLetters, setIsNotEnoughLetters] = useState(false)
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false)
@@ -240,6 +243,10 @@ function App() {
         <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
           {GAME_TITLE}
         </h1>
+        <HeartIcon
+          className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+          onClick={() => setIsAndrewModalOpen(true)}
+        />
         <InformationCircleIcon
           className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
           onClick={() => setIsInfoModalOpen(true)}
@@ -265,6 +272,10 @@ function App() {
         onEnter={onEnter}
         guesses={guesses}
         isRevealing={isRevealing}
+      />
+      <AndrewModal
+        isOpen={isAndrewModalOpen}
+        handleClose={() => setIsAndrewModalOpen(false)}
       />
       <InfoModal
         isOpen={isInfoModalOpen}
