@@ -24,5 +24,5 @@ export const WORDS = [
   'packt',
   'limbo',
   'bones',
-  'weird'
+  'weird',
 ]

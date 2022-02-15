@@ -10,9 +10,9 @@ export const AndrewModal = ({ isOpen, handleClose }: Props) => {
   return (
     <BaseModal title="About this game" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-      This game was created for a boy who loves Radiohead as much as I do.
-      Happy Valentine's Day, my love, you deserve way more than Radiordle but I only
-      show love in Computer.
+        This game was created for a boy who loves Radiohead as much as I do.
+        Happy Valentine's Day, my love, you deserve way more than Radiordle but I only
+        show love in Computer.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
